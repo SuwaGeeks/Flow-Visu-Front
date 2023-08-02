@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    build: ./FlowVisu/.
+    container_name: Flow_Visu_Front_app
+    ports:
+      - 5000:3000
