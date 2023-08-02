@@ -3,11 +3,13 @@ RUN /bin/bash &&\
   apt-get -y update &&\
   apt-get -y upgrade
 
+RUN mkdir /app
 WORKDIR /app
-COPY FlowVisu/ /app
 
-RUN yarn
-RUN yarn build
+COPY . /app
+
+RUN yarn &&\
+  yarn build
 
 WORKDIR /app/.output
 
