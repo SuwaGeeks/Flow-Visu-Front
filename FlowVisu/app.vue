@@ -4,6 +4,9 @@
       <h1>
         Flow-Visu
       </h1>
+      <h6>
+        Powered By SuwaGeeks
+      </h6>
     </header>
     <main>
       <NuxtPage />
@@ -27,17 +30,22 @@ ul,
 li {
   list-style: none;
 }
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
 </style>
 
 <style scoped>
 header {
-  height: 50px;
+  height: 70px;
   text-align: center;
   box-shadow: 0px 7px 10px -5px #777777;
 }
 
 main {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
 }
 
 footer {
