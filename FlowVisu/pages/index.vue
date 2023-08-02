@@ -1,334 +1,45 @@
 <template>
-<div id='top'>
-  <section>
-    <div class='section-head'>
-      <h2 class='subtitle'>
-        説明ブース
+  <div id='top'>
+    <router-link to='/scan' class='btn'>
+      <h2 class='card-title'>
+        ユーザースキャン
       </h2>
-    </div>
-    <div class='section-body'>
-      <ul>
-        <li>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section>
-    <div class='section-head'>
-      <h2 class='subtitle'>
-        3DCADブース
+    </router-link>
+    <router-link to='/dashbord' class='btn'>
+      <h2 class='card-title'>
+        ダッシュボード
       </h2>
-    </div>
-    <div class='section-body'>
-      <ul>
-        <li>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section>
-    <div class='section-head'>
-      <h2 class='subtitle'>
-        3DPrintブース
+    </router-link>
+    <router-link to='/setting' class='btn'>
+      <h2 class='card-title'>
+        設定
       </h2>
-    </div>
-    <div class='section-body'>
-      <ul>
-        <li>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li>id: -----------</li>
-              <li>担当者: xxxxx</li>
-              <li>開始時間:</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</div>
+    </router-link>
+  </div>
 </template>
 
 <style scoped>
 #top {
   height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-section {
-  width: 30%;
-  padding-top: 15px;
-}
-.section-head {
-  text-align: center;
-}
-.subtitle {
-  display: inline-block;
-  border-bottom: solid 5px #7a7a7a;
-  padding: 0 20px;
-}
-.section-body {
-  padding-top: 20px;
-  overflow-y: scroll;
-  height: calc(100% - 20px - 41px);
-}
-
-.card ul,
-.card li {
-  list-style: none;
-}
-.card {
+.btn {
   width: 300px;
   margin: 20px auto;
   padding: 15px 25px;
   border-radius: 25px;
-  box-shadow: 0px 7px 20px -5px #777777;
+  border: solid 3px #392061;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.btn:hover {
+  color: #ffffff;
+  background-color: #392061;
+  transition: all ease 0.3s;
 }
 </style>
