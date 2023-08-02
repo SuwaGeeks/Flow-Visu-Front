@@ -42,7 +42,7 @@ const isValidField = computed(() => (!!name.value && !!booth.value))
 const login = () => {
   if (isValidField.value) {
     window.localStorage.name = name.value
-    window.localStorage.booth = name.value
+    window.localStorage.booth = booth.value
     router.push('/')
   }
 }
