@@ -22,7 +22,7 @@
 const router = useRouter()
 
 onMounted(() => {
-  if (window.localStorage.getItem('name') !== '') {
+  if (!window.localStorage.getItem('name')) {
     router.push('/setting')
   }
 })
