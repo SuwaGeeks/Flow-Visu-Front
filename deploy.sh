@@ -1,5 +1,8 @@
 #/bin/bash
 
+# git 更新
+git pull
+
 # コンテナビルド
 docker-compose build
 
