@@ -18,6 +18,16 @@
   </div>
 </template>
 
+<script lang="ts" setup>
+const router = useRouter()
+
+onMounted(() => {
+  if (window.localStorage.getItem('name') !== '') {
+    router.push('/setting')
+  }
+})
+</script>
+
 <style scoped>
 #top {
   height: 100%;
