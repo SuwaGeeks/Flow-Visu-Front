@@ -1,5 +1,7 @@
 import QrReader from 'vue3-qr-reader'
 
 export default defineNuxtPlugin((NuxtApp) => {
-  NuxtApp.vueApp.use(QrReader)
+  if (typeof window === 'object') {
+    NuxtApp.vueApp.use(QrReader)
+  }
 })
