@@ -4,7 +4,7 @@ RUN /bin/bash &&\
   apt-get -y upgrade
 
 WORKDIR /app
-COPY . /app
+COPY FlowVisu/ /app
 
 RUN yarn
 RUN yarn build
