@@ -47,8 +47,24 @@ onMounted(() => {
   }
 })
 
-const onDecode = (data) => {
-  console.log(data)
+const onDecode = async (data) => {
+  try {
+    const step = window.localStorage.getItem('name')
+    const res = await fetch('http://flow-visu.suwageeks.org:3000/' + '/tag', {
+      method: "post",
+      body: {
+        tagId: data.toString(),
+        stepNo: step === "説明" ? 1 : (step === "3D CAD" ? 2 : 3),
+        boothId: 'none',
+        operator: window.localStorage.getItem('name'),
+        content: 'none'
+      }
+    })
+    const text = await res.text()
+    const resB = await JSON.parse(text)
+    alert(resB)
+  } catch(e) {
+  }
 }
 </script>
 

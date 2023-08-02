@@ -297,9 +297,21 @@
 <script lang="ts" setup>
 const router = useRouter()
 
-onMounted(() => {
+onMounted(async () => {
   if (!window.localStorage.getItem('name')) {
     router.push('/setting')
+    return
+  }
+
+  try {
+    const res = await fetch('http://flow-visu.suwageeks.org:3000' + '/status', {
+      method: "get"
+    })
+
+    const text = await res.text()
+    const resB = await JSON.parse(text)
+    alert(resB)
+  } catch(e) {
   }
 })
 </script>
