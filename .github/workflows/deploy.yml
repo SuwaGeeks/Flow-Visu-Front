@@ -20,7 +20,7 @@ jobs:
             HostName flow-visu.suwageeks.org
             User deployer
             Port 21000
-            IdentifyFile ~/.ssh/id_rsa
+            IdentityFile ~/.ssh/id_rsa
     - name: Run Script
       run: |
         ssh server "cd /home/deployer/Flow-Visu-Front && sh deploy.sh"
