@@ -23,5 +23,5 @@ jobs:
             IdentifyFile ~/.ssh/id_rsa
     - name: Run Script
       run: |
-        cd Flow-Visu-Front &&
+        cd /home/deployer/Flow-Visu-Front &&
         sh deploy.sh
