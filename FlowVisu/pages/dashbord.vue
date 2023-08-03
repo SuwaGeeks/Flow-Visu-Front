@@ -7,90 +7,13 @@
         </h2>
       </div>
       <div class='section-body'>
-        <ul>
+        <ul v-for="status in stepFilter(1)" :key='status.index'>
           <li>
             <div class="card">
               <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
+                <li>id: {{ status.tagId }}</li>
+                <li>担当者: {{ status.operator }}</li>
+                <li>開始時間: {{ status.startTime }}</li>
               </ul>
             </div>
           </li>
@@ -104,90 +27,13 @@
         </h2>
       </div>
       <div class='section-body'>
-        <ul>
+        <ul v-for="status in stepFilter(2)" :key='status.index'>
           <li>
             <div class="card">
               <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
+                <li>id: {{ status.tagId }}</li>
+                <li>担当者: {{ status.operator }}</li>
+                <li>開始時間: {{ status.startTime }}</li>
               </ul>
             </div>
           </li>
@@ -201,90 +47,13 @@
         </h2>
       </div>
       <div class='section-body'>
-        <ul>
+        <ul v-for="status in stepFilter(3)" :key='status.index'>
           <li>
             <div class="card">
               <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
-              </ul>
-            </div>
-            <div class="card">
-              <ul>
-                <li>id: -----------</li>
-                <li>担当者: xxxxx</li>
-                <li>開始時間:</li>
+                <li>id: {{ status.tagId }}</li>
+                <li>担当者: {{ status.operator }}</li>
+                <li>開始時間: {{ status.startTime }}</li>
               </ul>
             </div>
           </li>
@@ -296,6 +65,18 @@
 
 <script lang="ts" setup>
 const router = useRouter()
+const statusList = ref<Array<{
+  "id": Number
+  "boothId": String
+  "status": String,
+  "tagId": String
+  "startTime": String,
+  "operator": String
+  "created_at": String
+  "updated_at": String
+  "stepNo": Number
+  "content": String
+}>>([])
 
 onMounted(async () => {
   if (!window.localStorage.getItem('name')) {
@@ -304,16 +85,26 @@ onMounted(async () => {
   }
 
   try {
-    const res = await fetch('http://flow-visu.suwageeks.org:3000' + '/status', {
+    const res = await fetch('https://api.flow-visu.suwageeks.org' + '/status', {
       method: "get"
     })
-
-    const text = await res.text()
-    const resB = await JSON.parse(text)
-    alert(resB)
+    statusList.value = JSON.parse(await res.text()).data
   } catch(e) {
+    alert('APIの情報が取得できません')
+    router.push('/')
   }
 })
+
+const stepFilter = (stepNo: Number) => {
+  console.log(statusList.value)
+  if (statusList.value) {
+    return statusList.value.filter((status) => {
+      return status.stepNo === stepNo
+    })
+  } else {
+    return []
+  }
+}
 </script>
 
 <style scoped>
