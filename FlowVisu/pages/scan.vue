@@ -1,5 +1,17 @@
 <template>
   <div id='top'>
+    <div class='message' v-if='message.isShow'>
+      <div class='message-card'>
+        <div>
+          <h2 :class="message.isError ? 'message-card-title error' : 'message-card-title'">
+            {{ message.isError ? 'Error' : 'Success'}}
+          </h2>
+          <p>
+            {{ message.text }}
+          </p>
+        </div>
+      </div>
+    </div>
     <div class='card'>
       <div>
         <h2 class='card-title'>
@@ -8,10 +20,10 @@
         <div class='card-body'>
           <div class='field'>
             <p>
-              講師名: <span>佐伯 空都</span>
+              講師名: <span>{{ name }}</span>
             </p>
             <p>
-              担当ブース: <span>説明ブース</span>
+              担当ブース: <span>{{ booth }}ブース</span>
             </p>
           </div>
         </div>
@@ -23,7 +35,13 @@
         <div class='card-body'>
           <div class='field'>
             <p>
-              経過時間: <span>xxx</span>
+              userId: <span>{{ uid }}</span>
+            </p>
+            <p>
+              開始時間: <span>{{ start }}</span>
+            </p>
+            <p>
+              終了予定時間: <span>{{ end }}</span>
             </p>
           </div>
         </div>
@@ -41,6 +59,21 @@
 
 <script lang="ts" setup>
 import { QrStream } from 'vue3-qr-reader'
+const name = ref('')
+const booth = ref('')
+const uid = ref('')
+const start = ref('')
+const end = ref('')
+
+const message = reactive<{
+  isShow: Boolean
+  isError: Boolean
+  text: String
+}>({
+  isShow: false,
+  isError: false,
+  text: ''
+})
 
 const router = useRouter()
 
@@ -48,27 +81,48 @@ onMounted(() => {
   if (!window.localStorage.getItem('name')) {
     router.push('/setting')
   }
+  name.value = window.localStorage.getItem('name')
+  booth.value = window.localStorage.getItem('booth')
 })
 
 const onDecode = async (data) => {
   try {
-    const step = window.localStorage.getItem('name')
-    const res = await fetch('http://flow-visu.suwageeks.org:3000/' + '/tag', {
+    const res = await fetch('https://api.flow-visu.suwageeks.org/tag', {
       method: "post",
-      body: {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         tagId: data.toString(),
-        stepNo: step === "説明" ? 1 : (step === "3D CAD" ? 2 : 3),
+        stepNo: booth.value === "説明" ? 1 : (booth.value === "3D CAD" ? 2 : 3),
         boothId: 'none',
-        operator: window.localStorage.getItem('name'),
+        operator: name.value,
         content: 'none'
-      }
+      })
     })
-    const text = await res.text()
-    const resB = await JSON.parse(text)
-    alert(resB)
+    const resJson = JSON.parse(await res.text())
+    if (resJson.message === 'OK') {
+      uid.value = data.toString()
+      start.value = (new Date()).toLocaleString('jp-ja')
+      end.value = '未定'
+      message.isError = false
+      message.text = 'ブースへ入場しました'
+    } else {
+      if (res.status === 400) {
+        throw new Error('ブースへ入場済みです')
+      } else {
+        throw new Error('API-ERROR')
+      }
+    }
   } catch(e) {
-    alert(e)
+    message.isError = true
+    message.text = e.message
   }
+
+  message.isShow = true
+  setTimeout(function() {
+    message.isShow = false
+  }, 7000)
 }
 </script>
 
@@ -184,5 +238,38 @@ const onDecode = async (data) => {
   color: #FFFFFF;
   background-color: #8BD7D2;
   transition: background-color ease 0.2s, color ease 0.2s;
+}
+
+.message {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #77777770;
+  z-index: 999999;
+}
+.message-card {
+  display: inline-block;
+  padding: 2em 2.5em;
+  border-radius: 2em;
+  border: solid 1px #ddd;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+}
+.message-card-title {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: solid 5px #00BD9D;
+  color: #00BD9D;
+}
+.error {
+  border-left: solid 5px #bd0029;
+  color: #bd0029;
 }
 </style>
