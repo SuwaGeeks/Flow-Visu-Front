@@ -1,5 +1,17 @@
 <template>
   <div id='top'>
+    <div class='message' v-if='message.isShow'>
+      <div class='message-card'>
+        <div>
+          <h2 :class="message.isError ? 'message-card-title error' : 'message-card-title'">
+            {{ message.isError ? 'Error' : 'Success'}}
+          </h2>
+          <p>
+            {{ message.text }}
+          </p>
+        </div>
+      </div>
+    </div>
     <div class='card'>
       <div>
         <h2 class='card-title'>
@@ -19,6 +31,16 @@
 import { QrStream } from 'vue3-qr-reader'
 const router = useRouter()
 
+const message = reactive<{
+  isShow: Boolean
+  isError: Boolean
+  text: String
+}>({
+  isShow: false,
+  isError: false,
+  text: ''
+})
+
 onMounted(() => {
   if (!window.localStorage.getItem('name')) {
     router.push('/setting')
@@ -27,7 +49,6 @@ onMounted(() => {
 
 const onDecode = async (data) => {
   try {
-    const step = window.localStorage.getItem('name')
     const res = await fetch('https://api.flow-visu.suwageeks.org/tag', {
       method: "post",
       body: {
@@ -38,11 +59,22 @@ const onDecode = async (data) => {
         content: 'none'
       }
     })
-    const resB = JSON.parse(await res.text()).data
-    alert(resB)
+    const resJson = JSON.parse(await res.text()).data
+    if (resJson.message === 'ok') {
+      message.isError = false
+      message.text = 'ありがとうございました!'
+    } else {
+      throw new Error('API-ERROR')
+    }
   } catch(e) {
-    alert(e)
+    message.isError = true
+    message.text = e.message
   }
+  
+  message.isShow = true
+  setTimeout(function() {
+    message.isShow = false
+  }, 7000)
 }
 </script>
 
@@ -135,5 +167,39 @@ const onDecode = async (data) => {
   color: #FFFFFF;
   background-color: #8BD7D2;
   transition: background-color ease 0.2s, color ease 0.2s;
+}
+
+.message {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #77777770;
+  z-index: 999999;
+}
+
+.message-card {
+  display: inline-block;
+  padding: 2em 2.5em;
+  border-radius: 2em;
+  border: solid 1px #ddd;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+}
+.message-card-title {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: solid 5px #00BD9D;
+  color: #00BD9D;
+}
+.error {
+  border-left: solid 5px #bd0029;
+  color: #bd0029;
 }
 </style>
