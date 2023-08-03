@@ -51,20 +51,27 @@ const onDecode = async (data) => {
   try {
     const res = await fetch('https://api.flow-visu.suwageeks.org/tag', {
       method: "post",
-      body: {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         tagId: data.toString(),
         stepNo: 4,
         boothId: 'none',
         operator: 'System',
         content: 'none'
-      }
+      })
     })
-    const resJson = JSON.parse(await res.text()).data
-    if (resJson.message === 'ok') {
+    const resJson = JSON.parse(await res.text())
+    if (resJson.message === 'OK') {
       message.isError = false
       message.text = 'ありがとうございました!'
     } else {
-      throw new Error('API-ERROR')
+      if (res.status === 400) {
+        throw new Error('既に退室済みです')
+      } else {
+        throw new Error('API-ERROR')
+      }
     }
   } catch(e) {
     message.isError = true
