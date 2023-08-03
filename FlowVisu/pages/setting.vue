@@ -22,6 +22,9 @@
           </ul>
         </div>
         <div class='action-field'>
+          <router-link to='/' class='btn'>
+            戻る
+          </router-link>
           <div :class='isValidField ? "btn" : "btn disabled"' @click='login'>
             登録
           </div>
@@ -69,8 +72,8 @@ const login = () => {
 .card-title {
   margin-bottom: 5px;
   padding-left: 15px;
-  border-left: solid 5px #392061;
-  color: #392061;
+  border-left: solid 5px #00BD9D;
+  color: #00BD9D;
 }
 .card-body {
   padding: 0.5em 1em;
@@ -93,44 +96,35 @@ const login = () => {
 }
 .field label:before {
   content: '-';
-  color: #392061;
+  color: #00BD9D;
   font-size: 1.25em;
   margin-bottom: 5px;
 }
 
+.action-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .btn {
   display: inline-block;
   font-weight: bold;
   text-align: center;
-  padding: 0.3em 3em;
-  border-radius: 20px;
-  border: solid 4px #392061;
+  padding: 0.3em 1em;
+  margin-top: 10px;
+  border-radius: 1em;
+  border: solid 2px #8BD7D2;
+  background-color: #fff;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color ease 0.25s;
-}
-
-.btn:after {
-  position: absolute;
-  content: '';
-  display: inline-block;
-  background-color: #392061;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: -100%;
-  transition: left ease 0.25s;
-  z-index: -1;
+  transition: background-color ease 0.2s, color ease 0.2s;
 }
 
 .btn:hover {
   color: #FFFFFF;
-  transition: color ease 0.3s;
-}
-.btn:hover:after {
-  left: 0;
-  transition: left ease 0.3s;
+  background-color: #8BD7D2;
+  transition: background-color ease 0.2s, color ease 0.2s;
 }
 
 .action-field {
@@ -138,10 +132,10 @@ const login = () => {
 }
 
 .disabled {
-  background-color: #a0a0a0;
+  opacity: 0.5;
 }
 .disabled:hover {
-  background-color: #a0a0a0;
-  color: #000000;
+  color: #000;
+  background-color: #fff;
 }
 </style>

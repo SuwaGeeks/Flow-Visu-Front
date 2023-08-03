@@ -5,7 +5,7 @@
         Flow-Visu
       </h1>
       <h6>
-        Powered By SuwaGeeks
+        Powered By <a href='https://suwageeks.org'>SuwaGeeks</a>
       </h6>
     </header>
     <main>
@@ -41,11 +41,19 @@ a {
 header {
   height: 70px;
   text-align: center;
-  box-shadow: 0px 7px 10px -5px #777777;
+  border-bottom: solid 5px #00BD9D;
+  color: #00BD9D;
+  z-index: 99;
+}
+header a {
+  color: #49C6E5;
+  border-bottom: solid 1px #49C6E5;
 }
 
 main {
   height: calc(100vh - 100px);
+  background-color: #fffbfa;
+  z-index: 9;
 }
 
 footer {
@@ -54,5 +62,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 }
 </style>

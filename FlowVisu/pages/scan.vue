@@ -33,6 +33,9 @@
       <qr-stream @decode='onDecode'>
       </qr-stream>
     </div>
+    <router-link to='/' class='btn'>
+      戻る
+    </router-link>
   </div>
 </template>
 
@@ -64,6 +67,7 @@ const onDecode = async (data) => {
     const resB = await JSON.parse(text)
     alert(resB)
   } catch(e) {
+    alert(e)
   }
 }
 </script>
@@ -89,11 +93,11 @@ const onDecode = async (data) => {
 .card-title {
   margin-bottom: 5px;
   padding-left: 15px;
-  border-left: solid 5px #392061;
-  color: #392061;
+  border-left: solid 5px #00BD9D;
+  color: #00BD9D;
 }
 .card-body {
-  padding: 0.5em 1em;
+  padding-left: 1em;
 }
 .card-body label {
   display: block;
@@ -113,7 +117,7 @@ const onDecode = async (data) => {
 }
 .field label:before {
   content: '-';
-  color: #392061;
+  color: #00BD9D;
   font-size: 1.25em;
   margin-bottom: 5px;
 }
@@ -159,5 +163,26 @@ const onDecode = async (data) => {
 
 .card {
   margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.3em 3em;
+  margin-top: 25px;
+  border-radius: 1em;
+  border: solid 2px #8BD7D2;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color ease 0.2s, color ease 0.2s;
+}
+
+.btn:hover {
+  color: #FFFFFF;
+  background-color: #8BD7D2;
+  transition: background-color ease 0.2s, color ease 0.2s;
 }
 </style>
