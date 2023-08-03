@@ -6,7 +6,7 @@
       </h3>
       <ul>
         <li>講師名: {{ name }}</li>
-        <li>担当ブース: {{ booth }}</li>
+        <li>担当ブース: {{ booth }}ブース</li>
       </ul>
       <div class='info-action'>
         <router-link to='/setting' class='info-btn'>設定</router-link>
@@ -51,7 +51,7 @@ onMounted(async () => {
   booth.value = window.localStorage.getItem('booth')
 
   try {
-    const res = await fetch('http://flow-visu.suwageeks.org:3000' + '/ping', {
+    const res = await fetch('https://api.flow-visu.suwageeks.org/ping', {
       method: "get"
     })
 
