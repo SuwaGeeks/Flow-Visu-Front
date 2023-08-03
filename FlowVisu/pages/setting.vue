@@ -38,9 +38,14 @@
 const router = useRouter()
 
 const name = ref('')
-const booth = ref('exp')
+const booth = ref('')
 
 const isValidField = computed(() => (!!name.value && !!booth.value))
+
+onMounted(() => {
+  name.value = window.localStorage.getItem('name') ?? ''
+  booth.value = window.localStorage.getItem('booth') ?? ''
+})
 
 const login = () => {
   if (isValidField.value) {
