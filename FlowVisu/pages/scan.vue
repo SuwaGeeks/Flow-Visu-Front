@@ -1,6 +1,6 @@
 <template>
   <div id='top'>
-    <div class='message' v-if='message.isShow'>
+    <div class='message' v-if='message.isShow' @click='message.isShow = false'>
       <div class='message-card'>
         <div>
           <h2 :class="message.isError ? 'message-card-title error' : 'message-card-title'">
