@@ -51,9 +51,11 @@
       <qr-stream @decode='onDecode'>
       </qr-stream>
     </div>
-    <router-link to='/' class='btn'>
-      戻る
-    </router-link>
+    <div>
+      <router-link to='/' class='btn'>
+        戻る
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -178,6 +180,7 @@ const onDecode = async (data) => {
 
 .btn {
   display: inline-block;
+  height: 2em;
   font-weight: bold;
   text-align: center;
   padding: 0.3em 3em;

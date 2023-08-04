@@ -21,9 +21,11 @@
         </qr-stream>
       </div>
     </div>
-    <router-link to='/' class='btn'>
-      戻る
-    </router-link>
+    <div>
+      <router-link to='/' class='btn'>
+        戻る
+      </router-link>
+    </div>
   </div>
 </template>
 
