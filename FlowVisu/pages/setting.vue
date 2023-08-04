@@ -6,19 +6,36 @@
       </h2>
       <div class='card-body'>
         <div class='field'>
-          <label>
+          <label class='label-title'>
             講師名
           </label>
-          <input type='text' v-model="name">
+          <div class='input-text'>
+            <input type='text' v-model="name">
+          </div>
         </div>
         <div class='field'>
-          <label>
+          <label class='label-title'>
             担当ブース
           </label>
           <ul>
-            <li><input type='radio' name='booth' value='説明' v-model='booth'>　説明ブース</li>
-            <li><input type='radio' name='booth' value='3D CAD' v-model='booth'>　3D CADブース</li>
-            <li><input type='radio' name='booth' value='3D プリンター' v-model='booth'>　3D プリンターブース</li>
+            <li>
+              <label name='exp' class='radio'>
+                <input type='radio' name='exp' value='説明' v-model='booth'>
+                <span>説明ブース</span>
+              </label>
+            </li>
+            <li>
+              <label name='cad' class='radio'>
+                <input type='radio' name='cad' value='3D CAD' v-model='booth'>
+                <span>3D CADブース</span>
+              </label>
+            </li>
+            <li>
+              <label name='print' class='radio'>
+                <input type='radio' name='print' value='3D Print' v-model='booth'>
+                <span>3D プリンターブース</span>
+              </label>
+            </li>
           </ul>
         </div>
         <div class='action-field'>
@@ -83,7 +100,7 @@ const login = () => {
 .card-body {
   padding: 0.5em 1em;
 }
-.card-body label {
+.card-body .label-title {
   display: block;
 }
 
@@ -91,15 +108,12 @@ const login = () => {
   margin: 15px 0;
 }
 
-.field input {
-  margin-left: 1em;
-}
 
-.field label {
+.field .label-title {
   font-size: 1.25em;
   margin-bottom: 5px;
 }
-.field label:before {
+.field .label-title:before {
   content: '-';
   color: #00BD9D;
   font-size: 1.25em;
@@ -142,5 +156,52 @@ const login = () => {
 .disabled:hover {
   color: #000;
   background-color: #fff;
+}
+
+.input-text {
+  border: solid 2px #8BD7D2;
+  height: 2em;
+  border-radius: 2em;
+  display: inline-block;
+  padding: 0 1em;
+  margin-left: 1em;
+  width: 150px;
+}
+.input-text input {
+  height: 100%;
+  width: 100%;
+  border-radius: 2em;
+  border: none;
+  font-size: 1em;
+}
+.input-text input:focus {
+  outline: none;
+}
+
+ul {
+  margin-left: 1em;
+}
+input[type=radio] {
+  display: none;
+}
+
+.radio {
+  cursor: pointer;
+}
+.radio span {
+  display: flex;
+  align-items: center;
+}
+.radio span:before {
+  display: inline-block;
+  content: '';
+  width: calc(1em - 6px);
+  height: calc(1em - 6px);
+  border: solid 3px #8BD7D2;
+  margin-right: 0.5em;
+}
+
+input[type=radio]:checked + span:before {
+  background-color: #00BD9D;
 }
 </style>
