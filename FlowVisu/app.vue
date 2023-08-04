@@ -24,6 +24,7 @@ head,
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Heebo';
 }
 
 ul,
@@ -54,6 +55,7 @@ main {
   height: calc(100vh - 100px);
   background-color: #fffbfa;
   z-index: 9;
+  overflow-y: scroll;
 }
 
 footer {
