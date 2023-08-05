@@ -106,8 +106,9 @@ const onDecode = async (data) => {
     const resJson = JSON.parse(await res.text())
     if (resJson.message === 'OK') {
       uid.value = data.toString()
-      start.value = (new Date()).toLocaleString('jp-ja')
-      end.value = (new Date(start.value + 500000)).toLocaleString('jp-ja')
+      const d = new Date()
+      start.value = d.toLocaleString('jp-ja')
+      end.value = (new Date(Date.now() + 300000)).toLocaleString('jp-ja')
       message.isError = false
       message.text = 'ブースへ入場しました'
     } else {
