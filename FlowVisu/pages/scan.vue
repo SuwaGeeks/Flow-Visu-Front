@@ -107,7 +107,7 @@ const onDecode = async (data) => {
     if (resJson.message === 'OK') {
       uid.value = data.toString()
       start.value = (new Date()).toLocaleString('jp-ja')
-      end.value = '未定'
+      end.value = (new Date(start.value + 500000)).toLocaleString('jp-ja')
       message.isError = false
       message.text = 'ブースへ入場しました'
     } else {
