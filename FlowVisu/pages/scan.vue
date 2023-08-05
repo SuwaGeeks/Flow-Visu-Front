@@ -89,7 +89,7 @@ onMounted(() => {
 
 const onDecode = async (data) => {
   try {
-    if (data.toString() === "") { return }
+    if (!data.toString()) { return }
     const res = await fetch('https://api.flow-visu.suwageeks.org/tag', {
       method: "post",
       headers: {
